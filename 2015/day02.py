@@ -3,6 +3,8 @@ Advent of Code - Day 02
 Year: 2015
 """
 
+import time
+
 
 def part1(data):
     """
@@ -15,8 +17,9 @@ def part1(data):
         Solution to part 1
     """
     lines = data.strip().split('\n')
-    # TODO: Implement solution
-    return 0
+
+    for line in lines:
+        print(line.split('x'))
 
 
 def part2(data):
@@ -46,11 +49,15 @@ def main():
         return
     
     # Solve and print results
+    start = time.time()
     result1 = part1(data)
+    print(f"Time taken for Part 1: {time.time() - start:.6f} seconds")
     print(f"Part 1: {result1}")
     
     result2 = part2(data)
+    start = time.time()
     print(f"Part 2: {result2}")
+    print(f"Time taken for Part 2: {time.time() - start:.6f} seconds")
 
 
 if __name__ == "__main__":
