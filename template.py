@@ -3,6 +3,8 @@ Advent of Code - Day XX
 Year: YYYY
 """
 
+import time
+
 
 def part1(data):
     """
@@ -46,10 +48,14 @@ def main():
         return
     
     # Solve and print results
+    start = time.time()
     result1 = part1(data)
+    print(f"Time taken for Part 1: {time.time() - start:.6f} seconds")
     print(f"Part 1: {result1}")
     
+    start = time.time()
     result2 = part2(data)
+    print(f"Time taken for Part 2: {time.time() - start:.6f} seconds")
     print(f"Part 2: {result2}")
 
 
