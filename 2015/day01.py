@@ -2,6 +2,7 @@
 Advent of Code 2015 - Day 1: Not Quite Lisp
 https://adventofcode.com/2015/day/1
 """
+import time
 
 
 def part1(data):
@@ -59,10 +60,14 @@ def main():
         data = "(())"
     
     # Solve and print results
+    start_time = time.time()
     result1 = part1(data)
+    print(f"Time taken for Part 1: {time.time() - start_time:.6f} seconds")
     print(f"Part 1: {result1}")
     
+    start_time = time.time()
     result2 = part2(data)
+    print(f"Time taken for Part 2: {time.time() - start_time:.6f} seconds")
     print(f"Part 2: {result2}")
 
 
