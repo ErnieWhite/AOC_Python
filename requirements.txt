@@ -1,0 +1,2 @@
+# Python requirements for Advent of Code solutions
+# Add additional packages as needed for specific solutions
