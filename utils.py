@@ -17,7 +17,7 @@ def read_input(filename: str = "input.txt") -> str:
     Returns:
         Contents of the file as a string
     """
-    with open(filename, "r") as f:
+    with open(filename, "r", encoding="utf-8") as f:
         return f.read()
 
 
@@ -32,7 +32,7 @@ def read_lines(filename: str = "input.txt", strip: bool = True) -> List[str]:
     Returns:
         List of lines from the file
     """
-    with open(filename, "r") as f:
+    with open(filename, "r", encoding="utf-8") as f:
         lines = f.readlines()
         if strip:
             return [line.strip() for line in lines]

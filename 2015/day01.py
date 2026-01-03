@@ -51,7 +51,7 @@ def main():
     """Main function to run the solutions"""
     # Read input data from file
     try:
-        with open("input.txt", "r") as f:
+        with open("input.txt", "r", encoding="utf-8") as f:
             data = f.read()
     except FileNotFoundError:
         # Use example data if input file not found
