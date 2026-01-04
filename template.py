@@ -4,6 +4,7 @@ Year: YYYY
 """
 
 import time
+from utils import read_input
 
 
 def part1(data):
@@ -40,8 +41,7 @@ def main():
     """Main function to run the solutions"""
     # Read input data from file
     try:
-        with open("input.txt", "r", encoding="utf-8") as f:
-            data = f.read()
+        data = read_input("input.txt")
     except FileNotFoundError:
         print("Error: input.txt not found")
         print("Please create an input.txt file with your puzzle input")
@@ -50,13 +50,13 @@ def main():
     # Solve and print results
     start = time.time()
     result1 = part1(data)
-    print(f"Time taken for Part 1: {time.time() - start:.6f} seconds")
-    print(f"Part 1: {result1}")
+    stop = time.time()
+    print(f"Part 1\tTime: {stop - start:.6f}s\tResult: {result1}")
     
     start = time.time()
     result2 = part2(data)
-    print(f"Time taken for Part 2: {time.time() - start:.6f} seconds")
-    print(f"Part 2: {result2}")
+    stop = time.time()
+    print(f"Part 2\t{stop - start:.6f}s\tResult: {result2}")
 
 
 if __name__ == "__main__":
