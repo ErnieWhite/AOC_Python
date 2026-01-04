@@ -4,7 +4,7 @@ Year: 2015
 """
 
 import time
-from utils import read_input
+from ..utils import utils
 
 
 def part1(data):
@@ -18,6 +18,8 @@ def part1(data):
         Solution to part 1
     """
     lines = data.strip().split('\n')
+    for line in lines:
+        print(line)
     # TODO: Implement solution
     return 0
 
@@ -41,7 +43,7 @@ def main():
     """Main function to run the solutions"""
     # Read input data from file
     try:
-        data = read_input("input.txt")
+        data = read_input("input_03.txt")
     except FileNotFoundError:
         print("Error: input.txt not found")
         print("Please create an input.txt file with your puzzle input")

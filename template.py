@@ -4,7 +4,7 @@ Year: YYYY
 """
 
 import time
-from utils import read_input
+from utils.utils import read_input
 
 
 def part1(data):
