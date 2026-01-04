@@ -18,13 +18,24 @@ def part1(data):
     """
     lines = data.strip().split('\n')
 
+    total_area = 0
     for line in lines:
-        print(line.split('x'))
+        length, width, height = map(int, line.split('x'))
+        area1 = length * width
+        area2 = width * height
+        area3 = height * length
+        extra = min (area1, area2, area3)
+        total_area += 2 * (area1 + area2 + area3) + extra
+    return total_area
 
 
 def part2(data):
     """
     Solve part 2 of the puzzle
+
+    Formulas:
+    - Smallest perimeter: 2 * (sum of the two smallest sides)
+    - Volume: length * width * height
     
     Args:
         data: Input data as string
