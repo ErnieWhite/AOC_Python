@@ -29,6 +29,11 @@ def part1(data):
     return total_area
 
 
+def ribbon_needed(side_lengths):
+    sides = sorted(side_lengths)
+    return  2*sum(sides[:2]) + sides[0] * sides[1] * sides[2]
+
+
 def part2(data):
     """
     Solve part 2 of the puzzle
@@ -44,8 +49,11 @@ def part2(data):
         Solution to part 2
     """
     lines = data.strip().split('\n')
-    # TODO: Implement solution
-    return 0
+    total_ribbon = 0
+    for line in lines:
+        box_sides = list(map(int, line.split("x")))
+        total_ribbon += ribbon_needed(box_sides)
+    return total_ribbon 
 
 
 def main():
@@ -62,13 +70,13 @@ def main():
     # Solve and print results
     start = time.time()
     result1 = part1(data)
-    print(f"Time taken for Part 1: {time.time() - start:.6f} seconds")
-    print(f"Part 1: {result1}")
+    stop = time.time()
+    print(f"Part 1\tTime: {stop - start:.6f}s\tResult: {result1}")
     
-    result2 = part2(data)
     start = time.time()
-    print(f"Part 2: {result2}")
-    print(f"Time taken for Part 2: {time.time() - start:.6f} seconds")
+    result2 = part2(data)
+    stop = time.time() 
+    print(f"Part 2\tTime: {stop - start:.6f}s\tResult: {result2}")
 
 
 if __name__ == "__main__":
